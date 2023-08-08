@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<TextEditingController> listTextController = [];
 
-  GlobalKey formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -62,6 +62,22 @@ class _HomePageState extends State<HomePage> {
                       );
                     }).toList(),
                   ),
+
+                  //button
+                  FilledButton(
+                    onPressed: () {
+                      // submit
+                      if (formKey.currentState!.validate()) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            behavior: SnackBarBehavior.floating,
+                            content: Text('Saved!'),
+                          ),
+                        );
+                      }
+                    },
+                    child: Text('Submit'),
+                  )
                 ],
               ),
             ],
