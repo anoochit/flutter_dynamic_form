@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                         );
                       }
                     },
-                    child: Text('Submit'),
+                    child: const Text('Submit'),
                   )
                 ],
               ),
